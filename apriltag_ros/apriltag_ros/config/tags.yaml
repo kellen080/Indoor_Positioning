@@ -1,0 +1,172 @@
+# # Definitions of tags to detect
+#
+# ## General remarks
+#
+# - All length in meters
+# - 'size' refers to the length of the shared border between solid black and solid white rectangle.
+#   See README.md or https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#pose-estimation for details.
+# - Ellipsis (...) signifies that the previous element can be repeated multiple times.
+#
+# ## Standalone tag definitions
+# ### Remarks
+#
+# - name is optional
+#
+# ### Syntax
+#
+# standalone_tags:
+#   [
+#     {id: ID, size: SIZE, name: NAME},
+#     ...
+#   ]
+standalone_tags:
+  [
+    # {id: 1, size: 0.14, name: test01},
+    # {id: 2, size: 0.14, name: test02},
+    # {id: 3, size: 0.14, name: test03},
+    # {id: 4, size: 0.14, name: test04},
+  ]
+# ## Tag bundle definitions
+# ### Remarks
+#
+# - name is optional
+# - x, y, z have default values of 0 thus they are optional
+# - qw has default value of 1 and qx, qy, qz have default values of 0 thus they are optional
+#
+# ### Syntax
+#
+# tag_bundles:
+#   [
+#     {
+#       name: 'CUSTOM_BUNDLE_NAME',
+#       layout:
+#         [
+#           {id: ID, size: SIZE, x: X_POS, y: Y_POS, z: Z_POS, qw: QUAT_W_VAL, qx: QUAT_X_VAL, qy: QUAT_Y_VAL, qz: QUAT_Z_VAL},
+#           ...
+#         ]
+#     },
+#     ...
+#   ]
+tag_bundles:
+  [
+    {
+      name: 'CUSTOM_BUNDLE_NAME',
+      layout:
+        [
+          # apriltag_single.bag
+          # {id: 1, size: 0.14, x: 0, y: 0, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 2, size: 0.14, x: 0, y: 1.22, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 3, size: 0.14, x: 0, y: 2.44, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 4, size: 0.14, x: 1.22, y: 2.44, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+
+          # apriltag_multi.bag
+          # {id: 1, size: 0.14, x: 0, y: 0, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 2, size: 0.14, x: 0, y: 0.61, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 3, size: 0.14, x: 0.61, y: 0.61, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+          # {id: 4, size: 0.14, x: 1.22, y: 0.61, z: 0, qw: 0.707, qx: 0, qy: 0, qz: -0.707},
+
+          # apriltag_ceiling.bag
+          # {id: 1, size: 0.14, x: 0, y: 0, z: 2.72, qw:  0, qx: 0.707, qy:  -0.707, qz: 0},
+          # {id: 2, size: 0.14, x: 1.22, y: 0, z: 2.72, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 3, size: 0.14, x: 1.22, y: 1.22, z: 2.72, qw:  0, qx:  0.707, qy:  -0.707, qz:  0},
+          # {id: 4, size: 0.14, x: 1.22, y: 2.44, z: 2.72, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # apriltag_ceiling_045.bag
+          {id: 0, size: 0.14, x: 0, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 1, size: 0.14, x: 1.22, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 2, size: 0.14, x: 2.44, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 3, size: 0.14, x: 3.66, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 4, size: 0.14, x: 4.88, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 5, size: 0.14, x: 6.10, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 6, size: 0.14, x: 7.32, y: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          {id: 10, size: 0.14, x: 0, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 11, size: 0.14, x: 1.22, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 12, size: 0.14, x: 2.44, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 13, size: 0.14, x: 3.66, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 14, size: 0.14, x: 4.88, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 15, size: 0.14, x: 6.10, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 16, size: 0.14, x: 7.32, y: -1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          {id: 20, size: 0.14, x: 0, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 21, size: 0.14, x: 1.22, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 22, size: 0.14, x: 2.44, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 23, size: 0.14, x: 3.66, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 24, size: 0.14, x: 4.88, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 25, size: 0.14, x: 6.10, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 26, size: 0.14, x: 7.32, y: -2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          {id: 30, size: 0.14, x: 0, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 31, size: 0.14, x: 1.22, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 32, size: 0.14, x: 2.44, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 33, size: 0.14, x: 3.66, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 34, size: 0.14, x: 4.88, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 35, size: 0.14, x: 6.10, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 36, size: 0.14, x: 7.32, y: -3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          {id: 40, size: 0.14, x: 0, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 41, size: 0.14, x: 1.22, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 42, size: 0.14, x: 2.44, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 43, size: 0.14, x: 3.66, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 44, size: 0.14, x: 4.88, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 45, size: 0.14, x: 6.10, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 46, size: 0.14, x: 7.32, y: -4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          {id: 50, size: 0.14, x: 0, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 51, size: 0.14, x: 1.22, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 52, size: 0.14, x: 2.44, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 53, size: 0.14, x: 3.66, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 54, size: 0.14, x: 4.88, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 55, size: 0.14, x: 6.10, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          {id: 56, size: 0.14, x: 7.32, y: -6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 0, size: 0.14, y: 0, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 1, size: 0.14, y: 1.22, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 2, size: 0.14, y: 2.44, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 3, size: 0.14, y: 3.66, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 4, size: 0.14, y: 4.88, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 5, size: 0.14, y: 6.10, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 6, size: 0.14, y: 7.32, x: 0, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 10, size: 0.14, y: 0, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 11, size: 0.14, y: 1.22, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 12, size: 0.14, y: 2.44, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 13, size: 0.14, y: 3.66, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 14, size: 0.14, y: 4.88, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 15, size: 0.14, y: 6.10, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 16, size: 0.14, y: 7.32, x: 1.22, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 20, size: 0.14, y: 0, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 21, size: 0.14, y: 1.22, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 22, size: 0.14, y: 2.44, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 23, size: 0.14, y: 3.66, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 24, size: 0.14, y: 4.88, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 25, size: 0.14, y: 6.10, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 26, size: 0.14, y: 7.32, x: 2.44, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 30, size: 0.14, y: 0, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 31, size: 0.14, y: 1.22, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 32, size: 0.14, y: 2.44, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 33, size: 0.14, y: 3.66, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 34, size: 0.14, y: 4.88, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 35, size: 0.14, y: 6.10, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 36, size: 0.14, y: 7.32, x: 3.66, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 40, size: 0.14, y: 0, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 41, size: 0.14, y: 1.22, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 42, size: 0.14, y: 2.44, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 43, size: 0.14, y: 3.66, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 44, size: 0.14, y: 4.88, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 45, size: 0.14, y: 6.10, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 46, size: 0.14, y: 7.32, x: 4.88, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+
+          # {id: 50, size: 0.14, y: 0, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 51, size: 0.14, y: 1.22, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 52, size: 0.14, y: 2.44, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 53, size: 0.14, y: 3.66, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 54, size: 0.14, y: 4.88, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 55, size: 0.14, y: 6.10, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+          # {id: 56, size: 0.14, y: 7.32, x: 6.10, z: 2.50, qw:  0, qx:  0.707, qy:  -0.707, qz: 0},
+        ]
+    }
+  ]

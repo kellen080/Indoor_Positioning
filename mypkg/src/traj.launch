@@ -1,0 +1,41 @@
+<launch>
+<!-- uwb -->
+    <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
+        <param name="port_name" value="/dev/ttyUSB0" />
+        <param name="baud_rate" value="921600" />
+    </node>
+
+    <include file="$(find nlink_parser)/launch/linktrack_rviz.launch" />
+
+<!-- tag -->
+    <include file="$(find apriltag_ros)/launch/continuous_detection.launch">
+        <arg name="camera_name" default="/camera2" />
+    </include>
+
+<!-- qvio -->
+
+<!-- slam -->
+    <!-- <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <arg name="localization" default="true" />
+        <arg name="depth_topic" default="/camera/aligned_depth_to_color/image_raw" />
+        <arg name="rgb_topic" default="/camera/color/image_raw" />
+        <arg name="camera_info_topic" default="/camera/color/camera_info" />
+        <arg name="approx_sync" default="false" />
+    </include> -->
+
+<!-- path -->
+    <node pkg="mypkg" type="uwbTraj.py" name="path_uwb" />
+    <node pkg="mypkg" type="tagTraj.py" name="path_tag" />
+    <node pkg="mypkg" type="slamTraj.py" name="path_slam" />
+    <node pkg="mypkg" type="qvioTraj.py" name="path_qvio" />
+    <node pkg="using_markers" type="by_path" name="path_gt" />
+
+<!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mypkg)/rviz/traj.rviz" />
+
+</launch>
+
+
+<!-- delay example -->
+<!-- <arg name="node_start_delay" default="1.0" />  
+<node name="listener" pkg="roscpp_tutorials" type="listener" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " /> -->
